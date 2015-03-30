@@ -102,9 +102,12 @@ namespace RecKicker
         {
             bool result = true;
 
-            string textline = string.Format("1\n\"{0}\" \"\" 71 2013/02/05 22:58 2013/02/05 23:59 \"{1}\" \"\"", CreateTitle(), CreateFileName());
+            string textline = string.Format("\"{0}\" \"\" 71 2013/02/05 22:58 2013/02/05 23:59 \"{1}\" \"\"", CreateTitle(), CreateFileName());
 
             StreamWriter sw = new StreamWriter("movi1seg.ini", false);
+            sw.WriteLine("1");
+            sw.WriteLine(textline);
+            sw.Close();
 
             Process.Start("cmp.bat");
             return result;
