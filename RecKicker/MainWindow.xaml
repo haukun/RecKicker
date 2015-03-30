@@ -1,0 +1,38 @@
+﻿<Window x:Class="RecKicker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="320" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0" Name="TargetDateLabel" Content="対象日" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+            <Button Content="←" HorizontalAlignment="Left" Margin="10,0,0,0" Name="PrevDayButton" VerticalAlignment="Top" Width="20" Height="24" Click="PrevDayButton_Click" />
+            <DatePicker Name="TargetDatePicker" Margin="0,0,0,0" Width="140" HorizontalAlignment="Left" VerticalAlignment="Center" SelectedDateChanged="TargetDatePicker_SelectedDateChanged" SelectedDateFormat="Long" Text="y" />
+            <Button Content="→" HorizontalAlignment="Left" Margin="0,0,0,0" Name="NextDayButton" VerticalAlignment="Top" Width="20" Height="24" Click="NextDayButton_Click" />
+        </StackPanel>
+        <Label Grid.Row="1" Grid.Column="0" Name="MoviePathLabel" Content="ファイルパス" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+            <TextBox Name="MoviePathText" Margin="10,0,0,0" Width="139" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            <Button Name="MoviePathButton" Content="参照" Margin="10,0,0,0" />
+        </StackPanel>
+        <Label Grid.Row="2" Grid.Column="0" Name="PrefixTitleLabel" Content="接頭文字" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox Grid.Row="2" Grid.Column="1" Name="PrefixTitleText" Margin="10,0,0,0" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center" Text="" TextChanged="PrefixTitleText_TextChanged" />
+        <Label Grid.Row="3" Grid.Column="0" Name="SuffixTitleLabel" Content="接尾文字" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBox Grid.Row="3" Grid.Column="1" Name="SuffixTitleText" Margin="10,0,0,0" Width="180" HorizontalAlignment="Left" VerticalAlignment="Center" Text="" TextChanged="SuffixTitleText_TextChanged" />
+        <Label Grid.Row="4" Grid.Column="0" Name="TargetTitleLabel" Content="対象ファイル名" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="" Grid.ColumnSpan="2" Name="TargetTitleFixLabel" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" />
+        <Button Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Name="TransfarButton" Content="転送" Width="200" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" Click="TransfarButton_Click" />
+    </Grid>
+</Window>
